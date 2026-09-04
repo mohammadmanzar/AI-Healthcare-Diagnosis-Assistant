@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Healthcare - Analysis Result</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+    <style>
+        .prediction-card {
+            margin-top: 25px;
+            padding: 25px;
+            border-radius: 12px;
+            background: #f1f6fb;
+        }
+
+        .prediction-title {
+            font-size: 30px;
+            margin: 15px 0;
+        }
+
+        .confidence {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .prediction-list {
+            margin-top: 25px;
+        }
+
+        .prediction-item {
+            margin: 18px 0;
+        }
+
+        .prediction-header {
+            display: flex;
+            justify-content: space-between;
+            font-weight: bold;
+            margin-bottom: 7px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 14px;
+            background: #dce3ea;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .progress {
+            height: 100%;
+            background: #3498db;
+            border-radius: 10px;
+        }
+
+        .disclaimer {
+            margin-top: 30px;
+            padding: 18px;
+            background: #fff4d6;
+            border-left: 5px solid #e0a800;
+            line-height: 1.6;
+        }
+
+        .back {
+            display: inline-block;
+            margin-top: 25px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    {% if error %}
+
+        <h1>Unable to Analyze</h1>
+
+        <p class="error">{{ error }}</p>
+
+        <a class="back" href="/">← Go Back</a>
+
+    {% else %}
+
+        <h1>Analysis Result</h1>
+
+        <!-- User Symptoms -->
+        <div class="result-box">
+
+            <p>
+                <strong>Your input:</strong>
+            </p>
+
+            <p>{{ symptoms }}</p>
+
+        </div>
+
+
+        <!-- Main Prediction -->
+        <div class="prediction-card">
+
+            <p>
+                <strong>Most likely prediction:</strong>
+            </p>
+
+            <h2 class="prediction-title">
+                🩺 {{ prediction }}
+            </h2>
+
+            {% if confidence is not none %}
+
+                <p class="confidence">
+                    <strong>Model probability:</strong>
+                    {{ confidence }}%
+                </p>
+
+                <div class="progress-bar">
+                    <div class="progress"
+                         style="width: {{ confidence }}%;">
+                    </div>
+                </div>
+
+            {% endif %}
+
+        </div>
+
+
+        <!-- Top 3 Predictions -->
+        {% if top_predictions %}
+
+        <div class="prediction-list">
+
+            <h2>Top 3 Model Predictions</h2>
+
+            {% for item in top_predictions %}
+
+            <div class="prediction-item">
+
+                <div class="prediction-header">
+
+                    <span>
+                        {% if loop.index == 1 %}
+                            🥇
+                        {% elif loop.index == 2 %}
+                            🥈
+                        {% else %}
+                            🥉
+                        {% endif %}
+
+                        {{ item.disease }}
+                    </span>
+
+                    <span>
+                        {{ item.probability }}%
+                    </span>
+
+                </div>
+
+                <div class="progress-bar">
+
+                    <div class="progress"
+                         style="width: {{ item.probability }}%;">
+                    </div>
+
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+        {% endif %}
+
+
+        <!-- Disclaimer -->
+        <div class="disclaimer">
+
+            <strong>⚠ Important:</strong>
+
+            This is an academic AI/ML prototype and its output
+            should not be considered a medical diagnosis.
+            It should not be used for medical decisions.
+            Please consult a qualified healthcare professional.
+
+        </div>
+
+
+        <!-- Back Button -->
+        <a class="back" href="/">
+            ← Analyze another input
+        </a>
+
+    {% endif %}
+
+</div>
+
+</body>
+</html>

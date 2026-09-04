@@ -1,0 +1,399 @@
+/* ================================
+   AI HEALTHCARE ASSISTANT
+   Main Stylesheet
+================================ */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #eef6ff, #f7fbff);
+    color: #1f2937;
+}
+
+/* Main container */
+
+.container {
+    max-width: 950px;
+    margin: auto;
+    background: #ffffff;
+    padding: 45px;
+    border-radius: 20px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+}
+
+
+/* ================================
+   HERO SECTION
+================================ */
+
+.hero {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.logo {
+    width: 75px;
+    height: 75px;
+    margin: 0 auto 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e8f4ff;
+    border-radius: 50%;
+    font-size: 38px;
+}
+
+h1 {
+    margin: 0;
+    font-size: 38px;
+    color: #123b5d;
+}
+
+.subtitle {
+    margin-top: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #1976a8;
+}
+
+.description {
+    max-width: 750px;
+    margin: 15px auto 0;
+    line-height: 1.7;
+    color: #5b6573;
+}
+
+
+/* ================================
+   PREDICTION CARD
+================================ */
+
+.prediction-card {
+    padding: 30px;
+    border-radius: 16px;
+    background: #f8fbff;
+    border: 1px solid #dcebf7;
+}
+
+.prediction-card h2 {
+    margin-top: 0;
+    color: #123b5d;
+    font-size: 25px;
+}
+
+.instruction {
+    color: #667085;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin: 20px 0 10px;
+    color: #26374a;
+}
+
+
+/* ================================
+   TEXTAREA
+================================ */
+
+textarea {
+    width: 100%;
+    min-height: 170px;
+    padding: 16px;
+    border: 2px solid #d5e2ec;
+    border-radius: 12px;
+    resize: vertical;
+    font-size: 16px;
+    font-family: inherit;
+    line-height: 1.6;
+    background: white;
+    transition: 0.2s;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #2998d8;
+    box-shadow: 0 0 0 4px rgba(41, 152, 216, 0.12);
+}
+
+textarea::placeholder {
+    color: #9aa6b2;
+}
+
+
+/* ================================
+   EXAMPLE BUTTONS
+================================ */
+
+.examples {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.examples span {
+    font-size: 14px;
+    font-weight: bold;
+    color: #566474;
+    margin-right: 3px;
+}
+
+.examples button {
+    margin: 0;
+    padding: 7px 12px;
+    border: 1px solid #cfe3f2;
+    border-radius: 20px;
+    background: #ffffff;
+    color: #24658b;
+    font-size: 13px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.examples button:hover {
+    background: #eaf6ff;
+    border-color: #2998d8;
+    transform: translateY(-1px);
+}
+
+
+/* ================================
+   ANALYZE BUTTON
+================================ */
+
+.analyze-btn {
+    display: block;
+    width: 100%;
+    margin-top: 25px;
+    padding: 15px 22px;
+    border: none;
+    border-radius: 10px;
+    background: #1687c5;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.analyze-btn:hover {
+    background: #116e9f;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 15px rgba(22, 135, 197, 0.25);
+}
+
+.analyze-btn:active {
+    transform: translateY(0);
+}
+
+
+/* ================================
+   HOW IT WORKS
+================================ */
+
+.info-section {
+    margin-top: 40px;
+}
+
+.info-section h2,
+.technology h2 {
+    text-align: center;
+    color: #123b5d;
+    margin-bottom: 25px;
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.step {
+    padding: 24px 18px;
+    text-align: center;
+    background: #ffffff;
+    border: 1px solid #e1eaf1;
+    border-radius: 14px;
+    transition: 0.2s;
+}
+
+.step:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+}
+
+.step-icon {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.step h3 {
+    margin: 8px 0;
+    color: #244b67;
+    font-size: 17px;
+}
+
+.step p {
+    margin: 0;
+    color: #687787;
+    line-height: 1.5;
+    font-size: 14px;
+}
+
+
+/* ================================
+   TECHNOLOGY SECTION
+================================ */
+
+.technology {
+    margin-top: 40px;
+    padding: 25px;
+    background: #f7fafc;
+    border-radius: 14px;
+}
+
+.tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.tech-list span {
+    padding: 8px 14px;
+    border-radius: 20px;
+    background: #e8f4fb;
+    color: #24658b;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+/* ================================
+   MEDICAL WARNING
+================================ */
+
+.warning {
+    margin-top: 30px;
+    padding: 20px;
+    border-left: 5px solid #e0a000;
+    border-radius: 8px;
+    background: #fff8df;
+    line-height: 1.6;
+    color: #5c4b1f;
+}
+
+.warning strong {
+    color: #604d00;
+}
+
+.warning p {
+    margin-bottom: 0;
+}
+
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+    text-align: center;
+    margin-top: 35px;
+    padding-top: 20px;
+    border-top: 1px solid #e5e7eb;
+    color: #667085;
+    line-height: 1.6;
+}
+
+footer span {
+    font-size: 13px;
+    color: #98a2b3;
+}
+
+
+/* ================================
+   RESULT PAGE SUPPORT
+================================ */
+
+.result-box {
+    margin-top: 25px;
+    padding: 25px;
+    border-radius: 14px;
+    background: #f1f7fc;
+    border: 1px solid #dcebf7;
+}
+
+.error {
+    padding: 15px;
+    background: #ffe8e8;
+    border-left: 4px solid #c00;
+    border-radius: 6px;
+    color: #8b0000;
+}
+
+.small {
+    font-size: 13px;
+    color: #667085;
+}
+
+.back {
+    display: inline-block;
+    margin-top: 20px;
+    color: #1687c5;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.back:hover {
+    text-decoration: underline;
+}
+
+
+/* ================================
+   MOBILE RESPONSIVE DESIGN
+================================ */
+
+@media (max-width: 700px) {
+
+    body {
+        padding: 20px 10px;
+    }
+
+    .container {
+        padding: 25px 18px;
+        border-radius: 14px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    .subtitle {
+        font-size: 16px;
+    }
+
+    .prediction-card {
+        padding: 20px;
+    }
+
+    .steps {
+        grid-template-columns: 1fr;
+    }
+
+    .examples {
+        align-items: flex-start;
+    }
+
+    .examples span {
+        width: 100%;
+    }
+}
